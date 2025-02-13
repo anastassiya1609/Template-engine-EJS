@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= product.title %>
-    </title>
-</head>
-
-<body>
-    <h1><%= product.title %> </h1>
-    <img src="<%= product.image  %>" alt="">
-    <h2> <%= product.price %> </h2>
-    <p>Category: <%= product.category %> </p>
-    <a href="/products/">
-        Вернуться к списку
-    </a>
-
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= item.title %></title>
+  </head>
+  <body>
+    <%- include("./partials/header.ejs")  %>
+    <div class="container">
+      <div class="product">
+        <img
+          src="<%= item.image %>"
+          alt="<%= item.title %>"
+          class="product-img"
+        />
+        <div class="product-body">
+          <p class="product-category"><%= item.category %></p>
+          <h1 class="product-title"><%= item.title %></h1>
+          <p class="product-description"><%= item.description %></p>
+          <p class="product-rating">Rating: /5.0&starf;</p>
+          <div class="product-price">
+            <p><%= item.price %>$</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

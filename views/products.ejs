@@ -2,23 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Popular products</title>
 </head>
 
 <body>
-    <h1>Все продукты </h1>
-    <ul>
-        <% data.forEach((element, idx)=> { %>
-            <li><a href="/products/<%= idx +1  %>">
-                    <%= element.title %>
-                </a>
-
-            </li>
-            <% }); %>
-    </ul>
-
+  <%- include("./partials/header.ejs") %>
+    <div class="container">
+      <h2 class="page-title">Popular products</h2>
+      <div class="products-grid">
+        <% list.forEach((element, idx)=> { %>
+          <div class="products-item">
+            <img src="<%= element.image %>" alt="<%= element.title %>" class="products-img" />
+            <div class="products-body">
+              <h3 class="products-title">
+                <%= element.title %>
+              </h3>
+              <p class="products-category">
+                <%= element.category %>
+              </p>
+              <div class="products-price">
+                <p>
+                  <%= element.price %>$
+                </p>
+              </div>
+              <a href="/products/<%= element.id %>" class="products-link">More &rBarr;</a>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </div>
 </body>
 
 </html>
