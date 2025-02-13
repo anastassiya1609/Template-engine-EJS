@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= product.title %>
+    </title>
+</head>
+
+<body>
+    <h1><%= product.title %> </h1>
+    <img src="<%= product.image  %>" alt="">
+    <h2> <%= product.price %> </h2>
+    <p>Category: <%= product.category %> </p>
+    <a href="/products/">
+        Вернуться к списку
+    </a>
+
+</body>
+
+</html>
